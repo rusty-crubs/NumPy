@@ -54,6 +54,8 @@ Object = np.array([
   [3,4]
 ])
 ```
+
+
 Output: shape: array([2,2])
 
 ### **size**
