@@ -47,13 +47,13 @@
 
 [-] This determines the internal shapes. like 
 
-```
+`
 Python
 Object = np.array([
   [1,2],
   [3,4]
 ])
-```
+`
 
 
 Output: shape: array([2,2])
