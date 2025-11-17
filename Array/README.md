@@ -99,6 +99,21 @@ Output: shape: array([2,2])
 
 [-] Covers numpy.sort(), numpy.concatenate()
 
+### ***numpy.sort()***
+
+[>] Sorting an array is a simple with **np.sort()**. You can arrange any scrambled data or value with it.
+
+### ***numpy.concatenate()***
+
+[>] Combining two arrays is simple with **np.concatenate()**. You can combine any two arrays with it. i.e.,
+
+```
+> arr_1 = np.array([1, 2, 3, 4])
+> arr_2 = np.array([2, 4, 6, 8])
+> arr = np.concatenate((arr1, arr_2))
+```
+
+
 # **Recommend videos**
 
 ## About array: 
