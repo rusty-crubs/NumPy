@@ -103,6 +103,17 @@ Output: shape: array([2,2])
 
 [>] Sorting an array is a simple with **np.sort()**. You can arrange any scrambled data or value with it.
 
+[>] In addition to sort, which return a sorted copy of an array, you can say
+
+[1.] ***argsort***, which is an indirect sort along a specified axis.
+
+[2.] ***lexsort***, which is an indirect stable sort on multiple keys,
+
+[3.] ***searchsorted***, which will find elements in a sorted array, and 
+
+[4.] ***partition***, which is a partial sort.
+
+
 ### ***numpy.concatenate()***
 
 [>] Combining two arrays is simple with **np.concatenate()**. You can combine any two arrays with it. i.e.,
