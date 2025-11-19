@@ -16,17 +16,6 @@
 
 [3.] The shape must be "rectangular", not "jagged", e.g., each row of a two-dimensional array must have same number of columns.
 
-## **Dimension**
-
-[>] In NumPy, a dimension of an array is somethings referred as an "axis".
-
-[>] The terminology may be useful to disambiguate between the dimensionality of an array and the dimensionality of the data represented by the array.
-
-
-## **Slice in Array**
-
-[>] In Python, slicing is a method used to extract specific portions of sequences such as string, lists, tuples, ranges, and bytes.
-
 
 ## **Array Attributes**
 
@@ -181,6 +170,50 @@ print(np.reshape(a, shape(3,2), order='C'))  # Output: array([[0, 1], [2, 3], [4
 [2.] "F"- column-major Fortran, read/write elements in Fortran-like index order;
 
 [3.] "A"- preserve original if possible, read/write the elements in Fortran-like index order if a is Fortran contiguous in memory.
+
+## **Dimension**
+
+[>] In NumPy, a dimension of an array is somethings referred as an "axis".
+
+[>] The terminology may be useful to disambiguate between the dimensionality of an array and the dimensionality of the data represented by the array.
+
+[>] Two method to increase dimensions:
+
+[1.] We could increase an object existing dimensions by increasing that object axis, through **numpy.newaxis**, which adds an additional layer of axis without affecting its elements.
+
+```
+# Creating a 1D array
+One_Dimensional_Array = np.array([0, 1, 2, 3, 4, 5])
+
+print(f"One Dimensional Array shape: {One_Dimensional_Array.shape}")
+print(f"Dimension: {One_Dimensional_Array.ndim}")
+print(f"Shape: {One_Dimensional_Array.shape}")
+
+# Adding a new axis
+Two_Dimensional_Array = One_Dimensional_Array[np.newaxis, :]
+print(f"Two_Dimensional_Array: {Two_Dimensional_Array}")
+print(f"Two_Dimensional_Array shape: {Two_Dimensional_Array.shape}")
+print(f"Dimension: {Two_Dimensional_Array.ndim}")
+print(f"Shape:{Two_Dimensional_Array.shape}")
+```
+
+[2.] we could increase an object dimensions through **numpy.expand_dims(array_name, axis= 0\1)**
+
+```
+a = np.arange(6)
+print(a.shape) # output: 6
+
+b = np.expand_dims(a, axis = 1)
+print(b.shape) # output: (6,1)
+
+c = np.expand_dims(a, axis=0)
+print(c.shape) # output: (1,6)
+```
+
+
+## **Indexing and Slicing**
+
+[>] In Python, slicing is a method used to extract specific portions of sequences such as string, lists, tuples, ranges, and bytes.
 
 
 
