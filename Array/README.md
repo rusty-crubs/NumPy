@@ -156,6 +156,33 @@ This section covers **ndarray.ndim**, **ndarray.size**, **ndarray.shape**.
 
 ## ***Reshape***
 
+[>] using **arr.reshape(rows, columns)** will gice a new shape to an array without changing the data.
+[>] [!Reminder] When you use the reshape method, the array you want to produce needs to have same number of elements as the original array.
+
+```
+Python
+a = np.array([0, 1, 2, 3, 4, 5]) # contains 6 elements
+print(a)
+
+b = a.reshape(3, 2) # product of 3 * 2 = 6 elements
+print(b) # Output: array([[0, 1], [2, 3], [4, 5]])
+```
+
+[>] Also, we could use **np.reshape(array_name, shape = (row, columns), order='C')** to reshape array.
+
+```
+print(np.reshape(a, shape(3,2), order='C'))  # Output: array([[0, 1], [2, 3], [4, 5]])
+```
+
+[>] Where order is memory layout order for reading or writing elements such that:
+
+[1.] "C"- row-major default, read/write the elements using C-like index order;
+
+[2.] "F"- column-major Fortran, read/write elements in Fortran-like index order;
+
+[3.] "A"- preserve original if possible, read/write the elements in Fortran-like index order if a is Fortran contiguous in memory.
+
+
 
 # **Recommend videos**
 

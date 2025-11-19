@@ -27,3 +27,14 @@ arr_2 = np.array([2, 4, 6, 8])
 arr = np.concatenate((arr_1, arr_2))
 print(arr)
 print(np.sort(arr))
+
+
+# Reshape
+a = np.array([0, 1, 2, 3, 4, 5])  # contains 6 elements
+print(f"Orginal array: {a}")
+
+b = a.reshape(3, 2)  # product of 3 * 2 = 6 elements
+print(f"Reshaped array:\n {b}")  # Output: array([[0, 1], [2, 3], [4, 5]])
+
+b = np.reshape(a, shape=(3, 2), order='C')
+print(f"Reshaped array:\n {b}")  # Output: array([[0, 1], [2, 3], [4, 5]])
