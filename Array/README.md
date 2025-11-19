@@ -109,6 +109,17 @@ Output: shape: array([2,2])
 
 [2.] ***lexsort***, which is an indirect stable sort on multiple keys,
 
+```
+# lexsort
+First_Name = np.array(['Raj', 'Prabin', 'Guber', 'Michal'])
+Last_Name = np.array(['Kumar', 'Rai', 'Singh', 'Basti'])
+indication = np.lexsort((First_Name, Last_Name))
+print(f"Lexsort: {indication}")
+print(f"Lexsort: {np.lexsort((First_Name, Last_Name))}")
+order = indication
+print(list(zip(First_Name[order], Last_Name[order])))
+```
+
 [3.] ***searchsorted***, which will find elements in a sorted array, and 
 
 [4.] ***partition***, which is a partial sort.
@@ -123,6 +134,27 @@ Output: shape: array([2,2])
 > arr_2 = np.array([2, 4, 6, 8])
 > arr = np.concatenate((arr1, arr_2))
 ```
+
+
+## ***Shape and Size of an array***
+
+This section covers **ndarray.ndim**, **ndarray.size**, **ndarray.shape**.
+
+### **ndarray.ndim**: 
+
+[>] Tells the number of axis, or dimensions of the array.
+
+### **ndarray.size**
+
+[>] Tells the total number of elements of the array. 
+[>] Product of the elements of the array's shape.
+
+### **ndarray.shape**
+
+[>] Display a tuples of integers that indicate the number of elements stored along each dimension of the array.
+
+
+## ***Reshape***
 
 
 # **Recommend videos**
