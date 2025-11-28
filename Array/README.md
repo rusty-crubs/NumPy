@@ -215,7 +215,91 @@ print(c.shape) # output: (1,6)
 
 [>] In Python, slicing is a method used to extract specific portions of sequences such as string, lists, tuples, ranges, and bytes.
 
+[>] You can index and slice NumPy array in the same ways you can slice Python list.
 
+```
+data = np.arange(0, 10, dtype=np.int32)
+print(f"Data: {data}")
+print(f"type: {data.dtype}")
+
+print(f"First two value: {data[0:2]}")  # array[0 1]
+print(f"Second two values: {data[1:3]}")  # array[1 2]
+print(data[1:])  # array[1 2 3 4 5 6 7 8 9]
+print(data[-1:])
+print(data[:-1])
+```
+
+[>] we could visualize it
+
+<image src="https://numpy.org/doc/stable/_images/np_indexing.png">
+
+[>] You may want to take a section of your array or specific array elements to use in further analysis or additional operations. To do that, you'll need to subset, slice, and/or index your arrays.
+
+[>] For example:
+
+```
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print(a[a < 5])
+
+# output: array[1, 2, 3, 4]
+
+```
+
+[>] you can easily select values through this kind of slicing methods. Generally used to assign satisfactory resulting conditions to new array without effecting previous array.
+
+[>] Basics conditioning and sampling methods like:
+
+```
+import numpy as np 
+array = np.arange(0,10,dtype = int32)
+print(f"Array values: {array}")
+
+Divisible_by_2 = arrays[arrays % 2 == 0]
+print(f"Divisible by 2: {Divisible_by_2}") # Output: array[0 2 4 6 8 10]
+
+Less_than_5 = array[array < 5]
+print(f"Less than 5: {Less_than_5}") # Output: array[0 1 2 3 4]
+
+# conditions 
+print(f"Numbers between 3 and 9: {array[ array > 3 & array < 9 ]}")
+
+five_up = (array > 5) | (array == 5)
+print(five_up)
+```
+
+[>] We can also use ***numpy.nonzero()*** to select elements or indices from an array.
+
+```
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+b = np.nonzero(a < 5)
+print(b) # Output: array([0, 0, 0, 0], arrays([0, 1, 2, 3]))
+```
+
+[>] In this example, a tuple of arrays was returned: one for each dimensions. The first array represents the row indices where these values are found, and the second array represents the column indices where the values are found.
+
+[>] If we want to generate a list of coordinates where the elements exist, we can zip the arrays, iterate over the list of coordinates, and print them. For example:
+
+```
+list_of_coordinates = list(zip(b[0], b[1]))
+
+for coordinates in list_of_coordinates:
+    print(f"coordinates: {coordinates}")
+```
+
+[>] We can also use **numpy.zero()** to print the elements in an array that are less than 5 with:
+
+```
+print(a[b])
+# Output: [1 2 3 4]
+```
+
+[>] If the element we're looking for doesn't exit in the array, then the returned array of indices will be empty. For example:
+
+```
+not_there = np.nonzero(a == 42)
+print(not_there)
+# Output: (array[], dtype=int64), array([],dtype=int64)
+```
 
 # **Recommend videos**
 
