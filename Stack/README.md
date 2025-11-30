@@ -1,7 +1,7 @@
 <h2><b>How to create an array from existing data</b></h2>
 <p>
   This section utilizes <b>Slicing</b>, <b>numpy.vstack()</b>, <b>numpy.hstack()</b>, <b>numpy.hsplit</b>, <b>.view</b>, <b>copy</b>.
-<\p>
+</p>
 <p>
   We can easily create an array from a section of an existing arra. Lets say
 </p>
@@ -155,6 +155,34 @@ Horizantal Splitting:
        [13, 14, 15, 16]]), array([[ 5,  6,  7,  8],
        [17, 18, 19, 20]]), array([[ 9, 10, 11, 12],
        [21, 22, 23, 24]])]
+```
+
+We can use view method to create a new array object that looks at same data as the original array (a shallow copy)
+
+Views are an important NumPy concept! NumPy functions, as well as operations like indexing and slicing, will return views whenever possible.This saves memory and is faster (no copy of data has to be made). However it's important to be aware of this-modifying data in view also modifies the original array!
+
+```
+Orginal_Data = np.arange(1, 13).reshape(3, 4)
+# print(f"Orginal data:\n {Orginal_Data}")
+
+Temperory_Data = Orginal_Data[0, :]
+print(f"Temperory data:\n {Temperory_Data}")
+
+Temperory_Data[0] = 99
+print(f"Temperory Data:\n {Temperory_Data}")
+print(f"Orginal Data:\n {Orginal_Data}")
+```
+
+Using the **copy()** method will make a complete copy of the array and its data (a deep copy). We could use this method to make a copy and do whatever we want for the project and so on.
+
+```
+# Using copy()
+Copied_Data = Orginal_Data.copy()
+print(f"Copied Data:\n {Copied_Data}")
+
+Copied_Data[0][0] = 1
+print(f"Rearrangement in Copied_Data:\n {Copied_Data}")
+print(f"Orginal Data:\n {Orginal_Data}")
 ```
 
 

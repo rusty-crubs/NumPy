@@ -38,3 +38,22 @@ print(f"Vertical Splitting:\n {y}")
 
 y = np.hsplit(x, 3)
 print(f"Horizantal Splitting:\n {y}")
+
+# Viewing Method
+Orginal_Data = np.arange(1, 13).reshape(3, 4)
+# print(f"Orginal data:\n {Orginal_Data}")
+
+Temperory_Data = Orginal_Data[0, :]
+print(f"Temperory data:\n {Temperory_Data}")
+
+Temperory_Data[0] = 99
+print(f"Temperory Data:\n {Temperory_Data}")
+print(f"Orginal Data:\n {Orginal_Data}")
+
+# Using copy()
+Copied_Data = Orginal_Data.copy()
+print(f"Copied Data:\n {Copied_Data}")
+
+Copied_Data[0][0] = 1
+print(f"Rearrangement in Copied_Data:\n {Copied_Data}")
+print(f"Orginal Data:\n {Orginal_Data}")
