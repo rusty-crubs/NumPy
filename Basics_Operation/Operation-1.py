@@ -18,3 +18,12 @@ print(f"Sum of elements in data:{total}")
 
 Total = data.sum()
 print(f"Total: {Total}")
+
+Starting_Array = np.array([[1, 1], [2, 2]])
+
+print(f"Axis of Rows: {Starting_Array.sum(axis=0)}")
+print(f"Axis of Columns: {Starting_Array.sum(axis=1)}")
+
+# Broadcasting
+data = np.array([1.0, 2.0])
+print(f"data * 1.6: {data * 1.6}")

@@ -75,4 +75,18 @@ print(f"Total: {Total}")
 To add the rows or the columns in a 2D array, we can specify the axis:
 
 Consider starting array as:
+```
+Starting_Array = np.array([[1, 1], [2, 2]])
+```
 
+For sum over the axis with rows:
+
+```
+print(f"Axis of Rows: {Starting_Array.sum(axis=0)}")
+```
+
+For sum over the axis of columns:
+
+```
+print(f"Axis of Columns: {Starting_Array.sum(axis=1)}")
+```
