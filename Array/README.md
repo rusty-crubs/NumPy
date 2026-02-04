@@ -36,7 +36,7 @@
 
 [-] This determines the internal shapes. like 
 
-Python
+```Python
 Object = np.array([
   [1,2],
   [3,4]
@@ -44,6 +44,7 @@ Object = np.array([
 
 
 Output: shape: array([2,2])
+```
 
 ### **size**
 
@@ -98,7 +99,7 @@ Output: shape: array([2,2])
 
 [2.] ***lexsort***, which is an indirect stable sort on multiple keys,
 
-```
+```python
 # lexsort
 First_Name = np.array(['Raj', 'Prabin', 'Guber', 'Michal'])
 Last_Name = np.array(['Kumar', 'Rai', 'Singh', 'Basti'])
@@ -118,7 +119,7 @@ print(list(zip(First_Name[order], Last_Name[order])))
 
 [>] Combining two arrays is simple with **np.concatenate()**. You can combine any two arrays with it. i.e.,
 
-```
+```python
 > arr_1 = np.array([1, 2, 3, 4])
 > arr_2 = np.array([2, 4, 6, 8])
 > arr = np.concatenate((arr1, arr_2))
@@ -148,8 +149,7 @@ This section covers **ndarray.ndim**, **ndarray.size**, **ndarray.shape**.
 [>] using **arr.reshape(rows, columns)** will gice a new shape to an array without changing the data.
 [>] [!Reminder] When you use the reshape method, the array you want to produce needs to have same number of elements as the original array.
 
-```
-Python
+```python
 a = np.array([0, 1, 2, 3, 4, 5]) # contains 6 elements
 print(a)
 
@@ -159,7 +159,7 @@ print(b) # Output: array([[0, 1], [2, 3], [4, 5]])
 
 [>] Also, we could use **np.reshape(array_name, shape = (row, columns), order='C')** to reshape array.
 
-```
+```python
 print(np.reshape(a, shape(3,2), order='C'))  # Output: array([[0, 1], [2, 3], [4, 5]])
 ```
 
@@ -181,7 +181,7 @@ print(np.reshape(a, shape(3,2), order='C'))  # Output: array([[0, 1], [2, 3], [4
 
 [1.] We could increase an object existing dimensions by increasing that object axis, through **numpy.newaxis**, which adds an additional layer of axis without affecting its elements.
 
-```
+```python
 # Creating a 1D array
 One_Dimensional_Array = np.array([0, 1, 2, 3, 4, 5])
 
@@ -199,7 +199,7 @@ print(f"Shape:{Two_Dimensional_Array.shape}")
 
 [2.] we could increase an object dimensions through **numpy.expand_dims(array_name, axis= 0\1)**
 
-```
+```python
 a = np.arange(6)
 print(a.shape) # output: 6
 
@@ -217,7 +217,7 @@ print(c.shape) # output: (1,6)
 
 [>] You can index and slice NumPy array in the same ways you can slice Python list.
 
-```
+```python
 data = np.arange(0, 10, dtype=np.int32)
 print(f"Data: {data}")
 print(f"type: {data.dtype}")
@@ -237,7 +237,7 @@ print(data[:-1])
 
 [>] For example:
 
-```
+```python
 a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 print(a[a < 5])
 
@@ -249,7 +249,7 @@ print(a[a < 5])
 
 [>] Basics conditioning and sampling methods like:
 
-```
+```python
 import numpy as np 
 array = np.arange(0,10,dtype = int32)
 print(f"Array values: {array}")
@@ -269,7 +269,7 @@ print(five_up)
 
 [>] We can also use ***numpy.nonzero()*** to select elements or indices from an array.
 
-```
+```python
 a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 b = np.nonzero(a < 5)
 print(b) # Output: array([0, 0, 0, 0], arrays([0, 1, 2, 3]))
@@ -279,7 +279,7 @@ print(b) # Output: array([0, 0, 0, 0], arrays([0, 1, 2, 3]))
 
 [>] If we want to generate a list of coordinates where the elements exist, we can zip the arrays, iterate over the list of coordinates, and print them. For example:
 
-```
+```python
 list_of_coordinates = list(zip(b[0], b[1]))
 
 for coordinates in list_of_coordinates:
@@ -288,14 +288,14 @@ for coordinates in list_of_coordinates:
 
 [>] We can also use **numpy.zero()** to print the elements in an array that are less than 5 with:
 
-```
+```python
 print(a[b])
 # Output: [1 2 3 4]
 ```
 
 [>] If the element we're looking for doesn't exit in the array, then the returned array of indices will be empty. For example:
 
-```
+```python
 not_there = np.nonzero(a == 42)
 print(not_there)
 # Output: (array[], dtype=int64), array([],dtype=int64)

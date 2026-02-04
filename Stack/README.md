@@ -7,19 +7,19 @@
 </p>
 
 
-```
+```python
 a = numpy.arange(1,11,steps=1)
 ```
 
 <p>We can create a new array from a section of the array anytime by specifying where we want to slice that array.</p>
 
-```
+```python
 arr1 = a[3:8]
 print(arr1)
 # Output: array([4, 5, 6, 7, 8])
 ```
 
-```
+```python
 a = np.arange(0, 20, 2, dtype=int)
 print(f"Value of const array: {a}")
 print(f"Dimension: {a.ndim}")
@@ -36,7 +36,7 @@ print(f"Sliced array: {Sliced_array}")
 
 <p>We can also stack two existing arrays, both vertically and horizontially. Lets consider array <b>a1</b> and <b>a2</b>:</p>
 
-```
+```python
 a1 = np.array([
     [1, 1],
     [2, 2]
@@ -56,7 +56,7 @@ print(f"Horizontal Stacking: {horizontal_stacking}")
 
 <p>Vertical and horizontial stacking utilizes <b>numpy.vstack()</b> and <b>numpy.hstack()</b> to stack array <b>a1</b> and <b>a2</b>. </p>
 
-```
+```python
 a1 = np.array([
     [1, 1],
     [2, 2]
@@ -78,7 +78,7 @@ print(f"Horizontal Stacking: {horizontal_stacking}")
 
 We can use **numpy.vstack()** and **numpy.hstack()** to rearrange the array.
 
-```
+```python
 Output:
 Virtual Stacking: [[1 1]
  [2 2]
@@ -91,7 +91,7 @@ Horizontal Stacking: [[1 1 3 3]
 
 We can split an array into several smaller arrays using **numpy.hsplit()** and **numpy.vsplit()**. 
 
-```
+```python
 # Spliting
 x = np.arange(0, 25).reshape(5, 5)
 print(f"x:\n {x}")
@@ -115,7 +115,7 @@ print(f"Horizantal Splitting:\n {y}")
 
 We have split the array into 5, 2 and 3 equal parts of the array **arange()** and **reshape()**.
 
-```
+```python
 x:
  [[ 0  1  2  3  4]
  [ 5  6  7  8  9]
@@ -161,7 +161,7 @@ We can use view method to create a new array object that looks at same data as t
 
 Views are an important NumPy concept! NumPy functions, as well as operations like indexing and slicing, will return views whenever possible.This saves memory and is faster (no copy of data has to be made). However it's important to be aware of this-modifying data in view also modifies the original array!
 
-```
+```python
 Orginal_Data = np.arange(1, 13).reshape(3, 4)
 # print(f"Orginal data:\n {Orginal_Data}")
 
@@ -175,7 +175,7 @@ print(f"Orginal Data:\n {Orginal_Data}")
 
 Using the **copy()** method will make a complete copy of the array and its data (a deep copy). We could use this method to make a copy and do whatever we want for the project and so on.
 
-```
+```python
 # Using copy()
 Copied_Data = Orginal_Data.copy()
 print(f"Copied Data:\n {Copied_Data}")
